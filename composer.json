@@ -1,8 +1,8 @@
 {
-  "name": "mybizna/massmail",
+  "name": "mybizna/mailmass",
   "description": "",
   "type": "asgard-module",
-  "version": "1.2.51",
+  "version": "1.2.52",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Modules\\Massmail\\": ""
+      "Modules\\Mailmass\\": ""
     }
   }
 }
