@@ -5,12 +5,12 @@ namespace Modules\Massmail\Entities;
 use Modules\Base\Entities\BaseModel;
 use Illuminate\Database\Schema\Blueprint;
 
-class Massmail extends BaseModel
+class Campaign extends BaseModel
 {
 
     protected $fillable = ['name'];
     public $migrationDependancy = [];
-    protected $table = "massmail";
+    protected $table = "massmail_campaign";
 
     /**
      * List of fields for managing postings.
