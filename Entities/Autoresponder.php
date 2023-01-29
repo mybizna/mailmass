@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Massmail\Entities;
+namespace Modules\Mailmass\Entities;
 
 use Modules\Base\Entities\BaseModel;
 use Illuminate\Database\Schema\Blueprint;
@@ -10,7 +10,7 @@ class Autoresponder extends BaseModel
 
     protected $fillable = ['name'];
     public $migrationDependancy = [];
-    protected $table = "massmail_autoresponder";
+    protected $table = "mailmass_autoresponder";
 
     /**
      * List of fields for managing postings.
