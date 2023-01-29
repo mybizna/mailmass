@@ -5,7 +5,7 @@
 <script>
 export default {
     components: {
-        customform: window.$func.fetchComponent(["isp", "subscriber", "form.vue"])
+        customform: window.$func.fetchComponent(["mailmass", "group", "form.vue"])
     },
 };
 </script>

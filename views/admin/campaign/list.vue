@@ -1,6 +1,6 @@
 
 <template>
-    <table-list title="Isp Subscriber" :path_param="path_param" :search_fields="search_fields" :model="model"
+    <table-list title="Mail Masses Campaign" :path_param="path_param" :search_fields="search_fields" :model="model"
         :table_fields="table_fields"></table-list>
 </template>
 
@@ -12,28 +12,28 @@ export default {
     },
     data () {
         return {
-            path_param: ["isp", "subscriber"],
+            path_param: ["mailmass", "campaign"],
             model: {
                 id: "",
-                username: "",
-                password: "",
-                partner_id: "",
+                subject: "",
+                body: "",
+                send_date: "",
+                is_sent: "",
+                published: "",
             },
             search_fields: [
-                { type: "text", name: "username", label: "Username", ope: "", },
-                { type: "select", name: "partner_id", label: "Partner", ope: "", },
+                { type: "text", name: "subject", label: "Subject", ope: "", },
+                { type: "text", name: "body", label: "Body", ope: "", },
+                { type: "text", name: "send_date", label: "Send Date", ope: "", },
+                { type: "text", name: "is_sent", label: "Is Sent", ope: "", },
+                { type: "text", name: "published", label: "Published", ope: "", },
             ],
-            username: "",
-                password: "",
-                partner_id: "",
             table_fields: [
-                { text: "Username", prop: "username", name: "username", },
-                { 
-                    text: "Invoice", 
-                    prop: "[partner__first_name] [partner__last_name]", 
-                    name: "partner_id", 
-                    foreign: ['partner__first_name','partner__last_name',]
-                },
+                { text: "Subject", prop: "subject", name: "subject", },
+                { text: "Body", prop: "body", name: "body", },
+                { text: "Send Date", prop: "send_date", name: "send_date", },
+                { text: "Is Sent", prop: "is_sent", name: "is_sent", },
+                { text: "Published", prop: "published", name: "published", },
             ],
         };
     }
