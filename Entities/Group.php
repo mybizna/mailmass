@@ -2,13 +2,13 @@
 
 namespace Modules\Mailmass\Entities;
 
-use Modules\Base\Entities\BaseModel;
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Base\Entities\BaseModel;
 
 class Group extends BaseModel
 {
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'description', 'ordering', 'published'];
     public $migrationDependancy = [];
     protected $table = "mailmass_group";
 
@@ -21,6 +21,9 @@ class Group extends BaseModel
     public function migration(Blueprint $table)
     {
         $table->increments('id');
-        $table->string('name');
+        $table->char('name', 255);
+        $table->string('description');
+        $table->integer('ordering');
+        $table->tinyInteger('published')->default(true);
     }
 }
