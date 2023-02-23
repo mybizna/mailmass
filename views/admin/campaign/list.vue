@@ -1,37 +1,34 @@
 
 <template>
-    <table-render title="Mail Masses Campaign" :path_param="path_param" :search_fields="search_fields" :model="model"
-        :table_fields="table_fields"></table-render>
+    <table-render :path_param="['mailmass', 'campaign']" title="Mail Masses Campaign" :table_fields="table_fields">
+
+        <template #header>
+            <th-render>Subject</th-render>
+            <th-render>Body</th-render>
+            <th-render>Send Date</th-render>
+            <th-render>Is Sent</th-render>
+            <th-render>Published</th-render>
+        </template>
+
+        <template #body="{ item }">
+            <td>{{ item.subject }}</td>
+            <td>{{ item.body }}</td>
+            <td>{{ item.send_date }}</td>
+            <td>{{ item.is_sent }}</td>
+            <td>{{ item.published }}</td>
+        </template>
+
+
+    </table-render>
 </template>
 
 <script>
 
 export default {
-    data () {
+    data() {
         return {
-            path_param: ["mailmass", "campaign"],
-            model: {
-                id: "",
-                subject: "",
-                body: "",
-                send_date: "",
-                is_sent: "",
-                published: "",
-            },
-            search_fields: [
-                { type: "text", name: "subject", label: "Subject", ope: "", },
-                { type: "text", name: "body", label: "Body", ope: "", },
-                { type: "text", name: "send_date", label: "Send Date", ope: "", },
-                { type: "text", name: "is_sent", label: "Is Sent", ope: "", },
-                { type: "text", name: "published", label: "Published", ope: "", },
-            ],
-            table_fields: [
-                { text: "Subject", prop: "subject", name: "subject", },
-                { text: "Body", prop: "body", name: "body", },
-                { text: "Send Date", prop: "send_date", name: "send_date", },
-                { text: "Is Sent", prop: "is_sent", name: "is_sent", },
-                { text: "Published", prop: "published", name: "published", },
-            ],
+            table_fields: ['subject', 'body', 'send_date', 'is_sent', 'published'],
+
         };
     }
 };
