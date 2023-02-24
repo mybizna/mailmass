@@ -14,8 +14,12 @@
             <td>{{ item.subject }}</td>
             <td>{{ item.body }}</td>
             <td>{{ item.send_date }}</td>
-            <td>{{ item.is_sent }}</td>
-            <td>{{ item.published }}</td>
+            <td class="text-center">
+                <btn-status :status="item.is_sent"></btn-status>
+            </td>
+            <td class="text-center">
+                <btn-status :status="item.published"></btn-status>
+            </td>
         </template>
 
 

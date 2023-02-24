@@ -22,7 +22,9 @@
             <td>{{ item.date_field }}</td>
             <td>{{ item.start_date }}</td>
             <td>{{ item.end_date }}</td>
-            <td>{{ item.published }}</td>
+            <td class="text-center">
+                <btn-status :status="item.published"></btn-status>
+            </td>
         </template>
 
 
