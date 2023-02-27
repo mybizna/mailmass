@@ -1,5 +1,5 @@
 <template>
-    <edit-renderrrr :path_param="path_param" :model="model">
+    <edit-render :path_param="['mailmass', 'campaign']" :model="model">
 
         <div class="row">
             <div class="col-md-6">
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-    </edit-renderrrr>
+    </edit-render>
 </template>
 
 <script>
@@ -24,7 +24,6 @@ export default {
     data () {
         return {
             id: null,
-            path_param: ["mailmass", "campaign"],
             model: {
                 id: "",
                 subject: "",
