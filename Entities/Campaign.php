@@ -24,7 +24,7 @@ class Campaign extends BaseModel
         $table->string('subject');
         $table->string('body');
         $table->datetime('send_date');
-        $table->tinyInteger('is_sent')->default(false);
-        $table->tinyInteger('published')->default(true);
+        $table->tinyInteger('is_sent')->nullable()->default(0);
+        $table->tinyInteger('published')->nullable()->default(1);
     }
 }
