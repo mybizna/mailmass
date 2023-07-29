@@ -1,5 +1,7 @@
 <?php
 
+/** @var \Modules\Base\Classes\Fetch\Rights $this */
+
 $this->add_right("mailmass", "autoresponder", "administrator", view:true, add:true, edit:true, delete:true);
 $this->add_right("mailmass", "autoresponder", "manager", view:true, add:true, edit:true, delete:true);
 $this->add_right("mailmass", "autoresponder", "supervisor", view:true, add:true, edit:true, delete:true);
