@@ -17,6 +17,13 @@ class Campaign extends BaseModel
     protected $fillable = ['subject', 'body', 'send_date', 'is_sent', 'published'];
 
     /**
+     * The fields that are to be render when performing relationship queries.
+     *
+     * @var array<string>
+     */
+    public $rec_names = ['subject'];
+
+    /**
      * List of tables names that are need in this model during migration.
      *
      * @var array<string>
@@ -51,7 +58,7 @@ class Campaign extends BaseModel
 
     /**
      * Function for defining list of fields in form view.
-     * 
+     *
      * @return FormBuilder
      */
     public function formBuilder(): FormBuilder
@@ -71,7 +78,7 @@ class Campaign extends BaseModel
 
     /**
      * Function for defining list of fields in filter view.
-     * 
+     *
      * @return FormBuilder
      */
     public function filter(): FormBuilder
