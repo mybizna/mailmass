@@ -41,14 +41,27 @@ class Group extends BaseModel
      * @param Blueprint $table
      * @return void
      */
-    public function fields(Blueprint $table): void
+    public function fields(Blueprint $table = null): void
     {
         $this->fields = $table ?? new Blueprint($this->table);
-        
+
         $this->fields->increments('id')->html('text');
         $this->fields->char('name', 255)->html('text');
         $this->fields->string('description')->html('textarea');
         $this->fields->integer('ordering')->html('text');
         $this->fields->tinyInteger('published')->default(true)->html('switch');
+    }
+
+    /**
+     * List of structure for this model.
+     */
+    public function structure($structure): array
+    {
+        $structure = [
+            'table' => ['name', 'ordering', 'published'],
+            'filter' => ['name', 'published'],
+        ];
+
+        return $structure;
     }
 }
