@@ -44,7 +44,7 @@ class Campaign extends BaseModel
     public function fields(Blueprint $table = null): void
     {
         $this->fields = $table ?? new Blueprint($this->table);
-        
+
         $this->fields->increments('id')->html('text');
         $this->fields->string('subject')->html('text');
         $this->fields->string('body')->html('textarea');
@@ -58,8 +58,15 @@ class Campaign extends BaseModel
      */
     public function structure($structure): array
     {
+
         $structure = [
             'table' => ['subject', 'send_date', 'is_sent', 'published'],
+            'form' => [
+                ['label' => 'Subject', 'class' => 'w-full', 'fields' => ['subject']],
+                ['label' => 'Date', 'class' => 'w-1/2', 'fields' => ['send_date']],
+                ['label' => 'Setting', 'class' => 'w-1/2', 'fields' => ['is_sent', 'published']],
+                ['label' => 'Body', 'class' => 'w-full', 'fields' => ['body']],
+            ],
             'filter' => ['subject', 'send_date', 'is_sent', 'published'],
         ];
 
