@@ -57,10 +57,8 @@ class Group extends BaseModel
      */
     public function structure($structure): array
     {
-        $structure = [
-            'table' => ['name', 'ordering', 'published'],
-            'filter' => ['name', 'published'],
-        ];
+        $structure['table'] = ['name', 'ordering', 'published'];
+        $structure['filter'] = ['name', 'published'];
 
         return $structure;
     }

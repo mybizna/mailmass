@@ -59,16 +59,14 @@ class Campaign extends BaseModel
     public function structure($structure): array
     {
 
-        $structure = [
-            'table' => ['subject', 'send_date', 'is_sent', 'published'],
-            'form' => [
-                ['label' => 'Subject', 'class' => 'w-full', 'fields' => ['subject']],
-                ['label' => 'Date', 'class' => 'w-1/2', 'fields' => ['send_date']],
-                ['label' => 'Setting', 'class' => 'w-1/2', 'fields' => ['is_sent', 'published']],
-                ['label' => 'Body', 'class' => 'w-full', 'fields' => ['body']],
-            ],
-            'filter' => ['subject', 'send_date', 'is_sent', 'published'],
+        $structure['table'] = ['subject', 'send_date', 'is_sent', 'published'];
+        $structure['form'] = [
+            ['label' => 'Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
+            ['label' => 'Date', 'class' => 'col-span-6', 'fields' => ['send_date']],
+            ['label' => 'Setting', 'class' => 'col-span-6', 'fields' => ['is_sent', 'published']],
+            ['label' => 'Body', 'class' => 'col-span-full', 'fields' => ['body']],
         ];
+        $structure['filter'] = ['subject', 'send_date', 'is_sent', 'published'];
 
         return $structure;
     }
