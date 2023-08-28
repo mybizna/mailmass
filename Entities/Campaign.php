@@ -45,7 +45,7 @@ class Campaign extends BaseModel
     {
         $this->fields = $table ?? new Blueprint($this->table);
 
-        $this->fields->increments('id')->html('text');
+        $this->fields->increments('id')->html('hidden');
         $this->fields->string('subject')->html('text');
         $this->fields->string('body')->html('textarea');
         $this->fields->datetime('send_date')->html('date');
