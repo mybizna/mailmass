@@ -67,8 +67,8 @@ class Autoresponder extends BaseModel
         $structure['table'] = ['subject', 'wait_period', 'table_name', 'email_field', 'date_field', 'start_date', 'end_date', 'published'];
         $structure['form'] = [
             ['label' => 'Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
-            ['label' => 'Autoresponder', 'class' => 'col-span-6', 'fields' => ['wait_period', 'table_name', 'email_field', 'date_field']],
-            ['label' => 'Setting', 'class' => 'col-span-6', 'fields' => ['start_date', 'end_date', 'published']],
+            ['label' => 'Autoresponder', 'class' => 'col-span-full md:col-span-6', 'fields' => ['wait_period', 'table_name', 'email_field', 'date_field']],
+            ['label' => 'Setting', 'class' => 'col-span-full md:col-span-6', 'fields' => ['start_date', 'end_date', 'published']],
             ['label' => 'Body', 'class' => 'col-span-full', 'fields' => ['body']],
         ];
         $structure['filter'] = ['subject', 'start_date', 'end_date', 'published'];
