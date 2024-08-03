@@ -15,20 +15,6 @@ class Campaign extends BaseModel
     protected $fillable = ['subject', 'body', 'send_date', 'is_sent', 'published'];
 
     /**
-     * The fields that are to be render when performing relationship queries.
-     *
-     * @var array<string>
-     */
-    public $rec_names = ['subject'];
-
-    /**
-     * List of tables names that are need in this model during migration.
-     *
-     * @var array<string>
-     */
-    public array $migrationDependancy = [];
-
-    /**
      * The table associated with the model.
      *
      * @var string
@@ -53,38 +39,6 @@ class Campaign extends BaseModel
         $this->fields->tinyInteger('published')->nullable()->default(1)->html('switch');
     }
 
-    /**
-     * List of structure for this model.
-     */
-    public function structure($structure): array
-    {
-
-        $structure['table'] = ['subject', 'send_date', 'is_sent', 'published'];
-        $structure['form'] = [
-            ['label' => 'Campaign Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
-            ['label' => 'Campaign Date', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['send_date']],
-            ['label' => 'Campaign Setting', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['is_sent', 'published']],
-            ['label' => 'Campaign  Body', 'class' => 'col-span-full', 'fields' => ['body']],
-        ];
-        $structure['filter'] = ['subject', 'send_date', 'is_sent', 'published'];
-
-        return $structure;
-    }
 
 
-    /**
-     * Define rights for this model.
-     *
-     * @return array
-     */
-    public function rights(): array
-    {
-        $rights = parent::rights();
-
-        $rights['staff'] = ['view' => true];
-        $rights['registered'] = ['view' => true];
-        $rights['guest'] = [];
-
-        return $rights;
-    }
 }

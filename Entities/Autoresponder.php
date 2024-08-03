@@ -16,20 +16,6 @@ class Autoresponder extends BaseModel
         'date_field', 'start_date', 'end_date', 'published'];
 
     /**
-     * The fields that are to be render when performing relationship queries.
-     *
-     * @var array<string>
-     */
-    public $rec_names = ['subject'];
-
-    /**
-     * List of tables names that are need in this model during migration.
-     *
-     * @var array<string>
-     */
-    public array $migrationDependancy = [];
-
-    /**
      * The table associated with the model.
      *
      * @var string
@@ -58,38 +44,8 @@ class Autoresponder extends BaseModel
         $this->fields->tinyInteger('published')->default(true)->html('switch');
     }
 
-    /**
-     * List of structure for this model.
-     */
-    public function structure($structure): array
-    {
-
-        $structure['table'] = ['subject', 'wait_period', 'table_name', 'email_field', 'date_field', 'start_date', 'end_date', 'published'];
-        $structure['form'] = [
-            ['label' => 'Autoresponder Subject', 'class' => 'col-span-full', 'fields' => ['subject']],
-            ['label' => 'Autoresponder Detail', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['wait_period', 'table_name', 'email_field', 'date_field']],
-            ['label' => 'Autoresponder Setting', 'class' => 'col-span-full  md:col-span-6 md:pr-2', 'fields' => ['start_date', 'end_date', 'published']],
-            ['label' => 'Autoresponder Body', 'class' => 'col-span-full', 'fields' => ['body']],
-        ];
-        $structure['filter'] = ['subject', 'start_date', 'end_date', 'published'];
-
-        return $structure;
-    }
 
 
-    /**
-     * Define rights for this model.
-     *
-     * @return array
-     */
-    public function rights(): array
-    {
-        $rights = parent::rights();
 
-        $rights['staff'] = ['view' => true];
-        $rights['registered'] = [];
-        $rights['guest'] = [];
 
-        return $rights;
-    }
 }
