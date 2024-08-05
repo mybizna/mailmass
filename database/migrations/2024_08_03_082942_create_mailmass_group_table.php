@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('mailmass_group', function (Blueprint $table) {
             $table->id();
-            
+
+            $table->string('name', 255);
+            $table->string('description');
+            $table->integer('ordering');
+            $table->tinyInteger('published')->default(true);
+
             $table->timestamps();
         });
     }

@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('mailmass_campaign', function (Blueprint $table) {
             $table->id();
-            
+
+            $table->string('subject');
+            $table->text('body');
+            $table->dateTime('send_date');
+            $table->tinyInteger('is_sent')->nullable()->default(0);
+            $table->tinyInteger('published')->nullable()->default(1);
+
             $table->timestamps();
         });
     }
