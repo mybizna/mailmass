@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "mybizna/mail": "^24.2"
+    "mybizna/mail": "^2024.5"
   },
   "extra": {
     "laravel": {
