@@ -2,9 +2,6 @@
 
 namespace Modules\Mailmass\Filament\Resources;
 
-use Modules\Mailmass\Filament\Resources\CampaignResource\Pages;
-use Modules\Mailmass\Filament\Resources\CampaignResource\RelationManagers;
-use Modules\Mailmass\Models\Campaign;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,10 +9,16 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\Mailmass\Filament\Resources\CampaignResource\Pages;
+use Modules\Mailmass\Models\Campaign;
 
 class CampaignResource extends Resource
 {
     protected static ?string $model = Campaign::class;
+
+    protected static ?string $slug = 'mailmass/campaign';
+
+    protected static ?string $navigationGroup = 'Mail';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
