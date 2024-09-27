@@ -24,7 +24,12 @@ return new class extends Migration
             $table->datetime('end_date');
             $table->tinyInteger('published')->default(true);
 
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('deleted_by')->nullable()->constrained('users')->onDelete('set null');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
