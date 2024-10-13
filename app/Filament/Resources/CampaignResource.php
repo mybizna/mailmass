@@ -7,7 +7,7 @@ use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Base\Filament\Resources\BaseResource;
-use Modules\Base\Filament\Resources\Pages;
+use Modules\Mailmass\Filament\Resources\CampaignResource\Pages;
 use Modules\Mailmass\Models\Campaign;
 
 class CampaignResource extends BaseResource
@@ -83,12 +83,10 @@ class CampaignResource extends BaseResource
     public static function getPages(): array
     {
 
-        Pages\ListBase::setResource(static::class);
-
         return [
-            'index' => Pages\ListBase::route('/'),
-            'create' => Pages\CreateBase::route('/create'),
-            'edit' => Pages\EditBase::route('/{record}/edit'),
+            'index' => Pages\Listing::route('/'),
+            'create' => Pages\Creating::route('/create'),
+            'edit' => Pages\Editing::route('/{record}/edit'),
         ];
     }
 }
