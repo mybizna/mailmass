@@ -3,6 +3,7 @@
 namespace Modules\Mailmass\Models;
 
 use Modules\Base\Models\BaseModel;
+use Illuminate\Database\Schema\Blueprint;
 
 class Group extends BaseModel
 {
@@ -20,4 +21,15 @@ class Group extends BaseModel
      */
     protected $table = "mailmass_group";
 
+
+    public function migration(Blueprint $table): void
+    {
+        $table->id();
+
+        $table->string('name', 255);
+        $table->string('description');
+        $table->integer('ordering');
+        $table->tinyInteger('published')->default(true);
+
+    }
 }

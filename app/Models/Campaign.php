@@ -3,6 +3,7 @@
 namespace Modules\Mailmass\Models;
 
 use Modules\Base\Models\BaseModel;
+use Illuminate\Database\Schema\Blueprint;
 
 class Campaign extends BaseModel
 {
@@ -20,4 +21,16 @@ class Campaign extends BaseModel
      */
     protected $table = "mailmass_campaign";
 
+
+    public function migration(Blueprint $table): void
+    {
+        $table->id();
+
+        $table->string('subject');
+        $table->text('body');
+        $table->dateTime('send_date');
+        $table->tinyInteger('is_sent')->nullable()->default(0);
+        $table->tinyInteger('published')->nullable()->default(1);
+
+    }
 }
