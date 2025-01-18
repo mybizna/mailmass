@@ -24,7 +24,6 @@ class Group extends BaseModel
 
     public function migration(Blueprint $table): void
     {
-        $table->id();
 
         $table->string('name', 255);
         $table->string('description');

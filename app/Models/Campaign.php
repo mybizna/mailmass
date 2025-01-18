@@ -24,7 +24,6 @@ class Campaign extends BaseModel
 
     public function migration(Blueprint $table): void
     {
-        $table->id();
 
         $table->string('subject');
         $table->text('body');
